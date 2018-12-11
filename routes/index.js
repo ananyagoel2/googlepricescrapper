@@ -23,7 +23,10 @@ router.post('/', function(req, res, next) {
                 $('.lhpr-content-item').each(function (index,dataEle) {
                     var url = dataEle.outerHTML;
                     resultArray.push({url:$(url).find('a:first').attr('href'),
-                    data: dataEle.textContent})
+                        price: $(url).find('a:first').attr('data-dp'),
+                    name: $(url).find('span:last').text()
+                    })
+
                 });
                 return resultArray
             }catch (e) {
