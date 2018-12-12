@@ -22,9 +22,12 @@ router.post('/', function(req, res, next) {
             try {
                 $('.lhpr-content-item').each(function (index,dataEle) {
                     var url = dataEle.outerHTML;
-                    resultArray.push({url:$(url).find('a:first').attr('href'),
+                    resultArray.push({id: index,
+                        url:$(url).find('a:first').attr('href'),
                         price: $(url).find('a:first').attr('data-dp'),
-                    name: $(url).find('span:last').text()
+                    // name: $(url).find('span:first').find('span:nth-child(3)')
+                        name: $(url).find('div:nth-child(1)').find('div:nth-child(3)').find('span:first').text()
+
                     })
 
                 });
