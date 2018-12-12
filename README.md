@@ -5,7 +5,7 @@ An API that takes the following as input
 * duration: <Number>
 
 And returns a JSON of the form:
-```json
+```
 {
 {
 id:0
